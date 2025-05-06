@@ -1,0 +1,253 @@
+import streamlit as st
+import numpy as np
+import pandas as pd
+
+# Menambahkan Judul/ nama perushaan 
+st.title("TOKO AHYAR BY FIRA FASHION")
+
+# Menambahkan penjelasan
+import streamlit as st
+import pandas as pd
+
+# Judul aplikasi
+st.title("Aplikasi Penjualan Baju Wanita")
+
+# Deskripsi aplikasi
+st.write("Ini adalah aplikasi penjualan baju wanita dan ootd cewek kekinian!!!")
+
+# Daftar produk
+data = {
+    'Produk': ['Baju Gamis', 'Blouse', 'Dress', 'Jaket'],
+    'Harga': [150000, 120000, 200000, 250000]
+}
+df = pd.DataFrame(data)
+
+# Menampilkan DataFrame produk
+st.subheader("Daftar Produk")
+st.write(df)
+
+# Pilih produk
+selected_product = st.selectbox("Pilih Produk", df['Produk'])
+
+# Menampilkan harga produk yang dipilih
+product_price = df[df['Produk'] == selected_product]['Harga'].values[0]
+st.write(f"Harga untuk {selected_product} adalah: {product_price}")
+
+import streamlit as st
+import pandas as pd
+
+# Judul aplikasi
+st.title("Aplikasi Penjualan Baju Wanita")
+
+# Data baju wanita
+data = {
+    'Nama Produk': ['Baju Gamis', 'Blouse', 'Dress', 'Jaket', 'Tunik'],
+    'Harga': [150000, 120000, 200000, 250000, 180000],
+    'Ukuran': ['S, M, L', 'S, M, L', 'M, L', 'L, XL', 'S, M'],
+    'Stok': [10, 5, 8, 3, 15]
+}
+
+# Membuat DataFrame
+df = pd.DataFrame(data)
+
+# Menampilkan DataFrame produk
+st.subheader("Daftar Produk")
+st.write(df)
+
+# Pilih produk
+selected_product = st.selectbox("Pilih Produk", df['Nama Produk'])
+
+# Menampilkan harga produk yang dipilih
+product_price = df[df['Nama Produk'] == selected_product]['Harga'].values[0]
+st.write(f"Harga untuk {selected_product} adalah: {product_price}")
+
+# Input jumlah
+quantity = st.number_input("Jumlah", min_value=1, max_value=10)
+
+# Total harga
+total_price = product_price * quantity
+st.write(f"Total harga untuk {quantity} {selected_product} adalah: {total_price}")
+
+# import streamlit as st
+
+# Judul aplikasi
+st.title('Aplikasi Penjualan Baju Wanita')
+
+# Input jumlah baju
+jumlah_baju = st.number_input("Jumlah Baju:", min_value=1, value=1)
+
+# Harga per baju
+harga_per_baju = 150000  # Contoh harga
+st.write(f"Harga per Baju: {harga_per_baju}")
+
+# Total Harga Penjualan
+total_harga = jumlah_baju * harga_per_baju
+st.write(f"Total Harga Penjualan: {total_harga}")
+
+# Input Diskon
+diskon = st.number_input("Diskon (%):", min_value=0.0, max_value=100.0, value=0.0)
+
+# Menghitung harga setelah diskon
+harga_setelah_diskon = total_harga * (1 - diskon / 100)
+st.write(f"Harga Setelah Diskon: {harga_setelah_diskon}")
+
+# Menampilkan rumus dalam LaTeX
+st.latex(r'''
+    \text{Total Harga Penjualan} = \text{Harga per Baju} \times \text{Jumlah Baju}
+''')
+st.latex(r'''
+    \text{Harga Akhir} = \text{Total} - \left(\text{Total} \times \frac{\text{Diskon}}{100}\right)
+''')
+
+# import streamlit as st
+
+# Judul aplikasi
+st.title('Selamat Datang di Aplikasi Toko Kami!')
+
+# Bagian Pendahuluan
+st.header('Bagian 1: Pendahuluan')
+st.write('Aplikasi ini bertujuan untuk memudahkan Anda dalam melakukan pembelian baju wanita.')
+
+# Subbagian Data Pengguna
+st.subheader('Subbagian 1: Data Pengguna')
+st.write('Silakan masukkan informasi berikut untuk melanjutkan.')
+
+# Menampilkan caption
+st.caption('Data ini hanya untuk tujuan demonstrasi.')
+
+# Input nama pengguna
+nama_pengguna = st.text_input("Nama Pengguna:")
+st.write(f'Nama Anda: {nama_pengguna}')
+
+# Input email pengguna
+email_pengguna = st.text_input("Emai:")
+st.write(f'Email Anda: {email_pengguna}')
+
+#import streamlit as st
+
+# Judul aplikasi
+st.title('Aplikasi Penjualan Baju Wanita')
+
+# Bagian Pendahuluan
+st.header('Bagian 1: Pendahuluan')
+st.write('Aplikasi ini bertujuan untuk memudahkan Anda dalam melakukan pembelian baju wanita.')
+
+# Contoh kode menggunakan st.code()
+st.subheader('Contoh Kode untuk Menghitung Total Harga')
+st.code("""
+# Menghitung total harga penjualan
+jumlah_baju = 5
+harga_per_baju = 150000
+total_harga = jumlah_baju * harga_per_baju
+print(total_harga)
+""")
+
+# Menggunakan st.text untuk memberikan penjelasan
+st.subheader('Penjelasan Kode')
+st.text('Kode di atas menghitung total harga berdasarkan jumlah baju yang dibeli dan harga per baju.')
+
+# import streamlit as st
+
+# Judul aplikasi
+st.title('Aplikasi Penjualan Baju Wanita')
+
+# Bagian Pendahuluan
+st.header('Bagian 1: Pendahuluan')
+st.write('Aplikasi ini bertujuan untuk memudahkan Anda dalam melakukan pembelian baju wanita.')
+
+# Menggunakan st.latex untuk menampilkan rumus
+st.subheader('Rumus Total Harga Penjualan')
+st.latex(r'''
+    \text{Total Harga Penjualan} = \text{Harga per Baju} \times \text{Jumlah Baju}
+''')
+st.latex(r'''
+    \text{Harga Akhir} = \text{Total} - \left(\text{Total} \times \frac{\text{Diskon}}{100}\right)
+''')
+
+# Menggunakan st.markdown untuk penjelasan lebih lanjut
+st.subheader('Penjelasan Rumus')
+st.markdown('Rumus di atas digunakan untuk menghitung total harga dari pembelian baju. '
+            'Harga akhir setelah diskon juga dapat dihitung menggunakan rumus yang diberikan.')
+
+# import streamlit as st
+
+# Judul aplikasi
+st.title('Aplikasi Penjualan Baju Wanita')
+
+# Bagian Pendahuluan
+st.header('Bagian 1: Pendahuluan')
+st.write('Aplikasi ini bertujuan untuk memudahkan Anda dalam melakukan pembelian baju wanita.')
+
+# Menggunakan st.markdown untuk penjelasan lebih lanjut
+st.subheader('Tentang Aplikasi')
+st.markdown(
+    '**Aplikasi ini menyediakan berbagai pilihan baju wanita** yang dapat Anda pilih. '
+    'Berikut adalah beberapa kategori produk yang tersedia:'
+)
+
+# Daftar produk
+st.markdown('- Baju Gamis')
+st.markdown('- Blouse')
+st.markdown('- Dress')
+st.markdown('- Jaket')
+
+# Menambahkan divider
+st.divider()
+
+# Menggunakan st.markdown untuk menampilkan informasi tentang pembelian
+st.subheader('Informasi Pembelian')
+st.markdown(
+    'Silakan masukkan jumlah baju yang ingin dibeli dan hitung total harga. '
+    'Setelah itu, Anda dapat melihat harga akhir setelah diskon.'
+)
+
+# import streamlit as st
+import pandas as pd
+
+# Judul aplikasi
+st.title('Aplikasi Penjualan Baju Wanita')
+
+# Bagian Pendahuluan
+st.header('Bagian 1: Pendahuluan')
+st.write('Aplikasi ini bertujuan untuk memudahkan Anda dalam melakukan pembelian baju wanita.')
+
+# Data produk baju wanita
+data = {
+    'Nama Produk': ['Baju Gamis', 'Blouse', 'Dress', 'Jaket', 'Tunik'],
+    'Harga': [150000, 120000, 200000, 250000, 180000],
+    'Ukuran': ['S, M, L', 'S, M, L', 'M, L', 'L, XL', 'S, M'],
+    'Stok': [10, 5, 8, 3, 15]
+}
+
+# Membuat DataFrame
+df = pd.DataFrame(data)
+
+# Menampilkan DataFrame produk menggunakan st.dataframe()
+st.subheader('Daftar Produk Baju Wanita')
+st.dataframe(df)
+
+# Informasi tentang pembelian
+st.markdown('Silakan pilih produk yang ingin Anda beli dan masukkan jumlahnya.')
+
+# import streamlit as st
+import pandas as pd
+
+# Judul aplikasi
+st.title('Aplikasi Penjualan Baju Wanita')
+
+# Bagian Pendahuluan
+st.header('Bagian 1: Pendahuluan')
+st.write('Aplikasi ini bertujuan untuk memudahkan Anda dalam melakukan pembelian baju wanita.')
+
+# Upload file CSV
+uploaded_file = st.file_uploader("Pilih file CSV", type="csv")
+
+if uploaded_file is not None:
+    # Membaca file CSV ke dalam DataFrame
+    df = pd.read_csv(uploaded_file)
+    
+    # Menampilkan DataFrame
+    st.subheader('Data Produk Baju Wanita')
+    st.dataframe(df)
+else:
+    st.write('Tidak ada file yang dipilih.')
